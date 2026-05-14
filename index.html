@@ -4,11 +4,17 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BKN Tracking — CAMO Management System</title>
-<script src="./index_files/supabase.min.js" crossorigin="anonymous"></script>
-<script src="./index_files/chart.umd.min.js" crossorigin="anonymous"></script>
-<script src="./index_files/xlsx.full.min.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="./index_files/all.min.css" crossorigin="anonymous">
-<link href="./index_files/css2" rel="stylesheet">
+   <!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+   <!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   <!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+   <!-- CHART.JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <!-- XLSX -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 <style>
 /* ═══════════════════════════════════════════════
    BKN TRACKING — CAMO Management System
@@ -885,10 +891,13 @@ textarea { min-height: 80px; resize: vertical; }
 //     supabase.com → Settings → API
 // ══════════════════════════════════════════════
 const SUPABASE_URL  = 'https://ktuiodywdxerfuairfql.supabase.co';
-const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt0dWlvZHl3ZHhlcmZ1YWlyZnFsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3NTA3NDgsImV4cCI6MjA5NDMyNjc0OH0.AgWM53YCm6zGls7I83EfHIkGqsFWtpMO6A6FEJrY9Oc';
 
-const { createClient } = window.supabase || supabase;
-const db = createClient(SUPABASE_URL, SUPABASE_ANON);
+const SUPABASE_ANON = 'SENIN_KEY';
+
+const db = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON
+);
 
 // ══════════════════════════════════════════════
 //  APP STATE
